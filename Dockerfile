@@ -83,8 +83,14 @@ RUN curl -L -o ${SAUCECTL_BINARY} \
 COPY --chown=seluser:seluser . .
 
 # Workaround for permissions in CI if run with a different user
-RUN chmod 777 -R /home/seluser/
+# RUN chmod 777 -R /home/seluser/
 
+USER root
+RUN sudo apt-get install -y libharfbuzz-icu0\
+              libgstreamer-gl1.0-0\
+              libgstreamer-plugins-bad1.0-0
+
+USER seluser
 #==================
 # ENTRYPOINT & CMD
 #==================
