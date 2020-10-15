@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+echo "chrome_stable_version=$(chrome_stable_version)"
+google-chrome-stable --version
+
+echo "firefox_version=$(firefox_version)"
+firefox --version
+
+echo "python_version=$(python_version)"
+python --version
